@@ -1,0 +1,25 @@
+{
+  "name": "http://201753100/",
+  "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 4",
+  "homepage": "http://201753100/",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "responsive",
+    "back-end",
+    "template",
+    "theme",
+    "web",
+    "admin"
+  ],
+  "authors": [
+    {
+      "name": "Colorlib"
+    }
+  ],
+  "license": "MIT",
+  "support": {
+    "issues": "http://201753100/"
+  }
+}
