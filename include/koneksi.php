@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "new_rena";
+$database = "si_rena";
 $username = "root";
 $password = "";
 // untuk tulisan bercetak tebal silakan sesuaikan dengan detail database Anda

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Nov 2020 pada 16.53
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.3.22
+-- Waktu pembuatan: 02 Des 2020 pada 09.10
+-- Versi server: 10.4.8-MariaDB
+-- Versi PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `new_rena`
+-- Database: `si_rena`
 --
 
 -- --------------------------------------------------------
@@ -50,7 +51,16 @@ INSERT INTO `rinci_proses` (`id_transaksi`, `tgl_proses`, `ket_proses`, `id_user
 (15, '2020-07-11', 'TERKIRIM', 18),
 (16, '2020-11-13', 'proses perakitan', 1),
 (16, '2020-11-13', 'PROSES PENGIRIMAN', 1),
-(16, '2020-11-13', 'TERKIRIM', 44);
+(16, '2020-11-13', 'TERKIRIM', 44),
+(17, '2020-11-17', 'Proses pengelasan', 1),
+(18, '2020-11-18', 'PROSES PENGIRIMAN', 1),
+(18, '2020-11-18', 'TERKIRIM', 30),
+(19, '2020-11-20', 'pengecatan ', 1),
+(19, '2020-11-20', 'PROSES PENGIRIMAN', 1),
+(19, '2020-11-20', 'TERKIRIM', 35),
+(20, '2020-11-20', 'proses pembentukan bentuk kaca', 1),
+(20, '2020-11-20', 'PROSES PENGIRIMAN', 1),
+(20, '2020-11-20', 'TERKIRIM', 35);
 
 -- --------------------------------------------------------
 
@@ -75,7 +85,11 @@ INSERT INTO `rinci_transaksi` (`id_transaksi`, `kd_brg`, `harga`, `jml_beli`, `k
 (14, 2, 800000, 2, ''),
 (15, 4, 500000, 1, 'sesuai produk'),
 (16, 2, 400000, 1, 'warna merah'),
-(16, 5, 80000, 1, 'Sesuai katalog');
+(16, 5, 80000, 1, 'Sesuai katalog'),
+(17, 2, 400000, 1, 'Cat putih'),
+(18, 6, 800000, 1, 'sesuai keterangan'),
+(19, 10, 400000, 1, 'sesuai keterangan gambar'),
+(20, 6, 800000, 1, 'sesuai keterangan gambar');
 
 -- --------------------------------------------------------
 
@@ -158,7 +172,11 @@ INSERT INTO `tbl_transaksi` (`id_transaksi`, `tgl_transaksi`, `jml_harga`, `baya
 (13, '2020-11-09', 400000, 'LUNAS', 'TERKIRIM', '091120201658165677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 14),
 (14, '2020-11-12', 800000, 'LUNAS', 'TERKIRIM', '121120201916285677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 30),
 (15, '2020-07-11', 500000, 'LUNAS', 'TERKIRIM', '110720202044345677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 18),
-(16, '2020-11-13', 480000, 'LUNAS', 'TERKIRIM', '131120200243115677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 44);
+(16, '2020-11-13', 480000, 'LUNAS', 'TERKIRIM', '131120200243115677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 44),
+(17, '2020-11-17', 400000, 'LUNAS', 'DITERIMA', '171120201823025677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 14),
+(18, '2020-11-18', 800000, 'LUNAS', 'TERKIRIM', '181120201306495677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 30),
+(19, '2020-11-20', 400000, 'LUNAS', 'TERKIRIM', '201120200020175677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 35),
+(20, '2020-11-20', 800000, 'LUNAS', 'TERKIRIM', '201120200247355677080_cf2ef623-8e05-4c90-80ec-0a6edb107d3e_648_648.jpg', 35);
 
 -- --------------------------------------------------------
 
@@ -183,7 +201,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `email`, `nm_user`, `alamat`, `no_hp`, `level`, `status`) VALUES
-(1, 'admin', '12345', 'renaafida04@gmail.com', 'Rena', 'Ds. Jatikulon, Kec. Mejobo, Kab. Kudus', '872312324421', 'ADMIN', 'ADA'),
+(1, 'admin', '12345', 'renaafida04@gmail.com', 'Rena', 'Ds. Jatikulon, Kec. Mejobo, Kab. Kudus', '087231232442', 'ADMIN', 'ADA'),
 (7, 'pemilik', '1234', 'pemilik@gmail.com', 'SAIFUL HUDA', 'Pemilik', '089123123234', 'PEMILIK', 'ADA'),
 (9, 'KEVAN', '12345', 'kevan@gmail.com', 'KEVAN', 'BAE', '08521035210', 'KONSUMEN', 'ADA'),
 (14, 'Aida', '12345', 'aida88@gmail.com', 'Aida Dwi Fitria', 'Jepara', '089627727522', 'KONSUMEN', 'ADA'),
@@ -284,7 +302,7 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT untuk tabel `tbl_transaksi`
 --
 ALTER TABLE `tbl_transaksi`
-  MODIFY `id_transaksi` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_transaksi` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_user`

@@ -130,16 +130,6 @@ $terkirim = mysqli_fetch_array($f_terkirim);
                                         <tr>
                                             <td>Jumlah Transaksi</td>
                                             <td>:</td>
-                                            <td><?= $transaksi_jumlah['jml_transaksi']; ?> Transaksi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Transaksi Proses</td>
-                                            <td>:</td>
-                                            <td><?= $proses['jml_proses']; ?> Transaksi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Transaksi Selesai</td>
-                                            <td>:</td>
                                             <td><?= $terkirim['jml_dikirim']; ?> Transaksi</td>
                                         </tr>
                                     </table>
@@ -161,7 +151,7 @@ $terkirim = mysqli_fetch_array($f_terkirim);
                                                 $bulan   = $_POST['bulan'];
                                                 $tahun   = $_POST['tahun'];
                                                 $sql_tampil = "SELECT *, date_format(A.tgl_transaksi, '%d %M %Y') as tgl_transaksi, date_format(B.tgl_proses, '%d %M %Y') as tgl_proses FROM `tbl_transaksi` as A INNER JOIN tbl_user as C on A.id_user=C.id_user INNER JOIN rinci_proses as B on A.id_transaksi=B.id_transaksi WHERE A.status='TERKIRIM' AND B.ket_proses='TERKIRIM' AND month(A.tgl_transaksi)='$bulan' AND YEAR(A.tgl_transaksi)='$tahun' group by A.id_transaksi";
-                                                // Query untuk menampilkan semua data buku  
+                                                // Query untuk menampilkan cetak laporan  
                                                 $no = 1;
                                                 $query_tampil = mysqli_query($conn, $sql_tampil);
                                                 while ($data = mysqli_fetch_assoc($query_tampil)) {
